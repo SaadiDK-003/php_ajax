@@ -1,0 +1,200 @@
+@import "mixin";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.5s;
+}
+
+// extra classes
+.txt-center {
+  text-align: center;
+  &.g-12 {
+    grid-column: 1/-1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    max-width: 1440px;
+    margin-inline: auto;
+    box-shadow: 0 0 8px 2px #888;
+    overflow-x: hidden;
+    // height: 100vh;
+    header {
+      min-height: 80px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      h3 {
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scale(0);
+          height: 2px;
+          bottom: -5px;
+          transition-duration: 0.3s;
+          transition-delay: 0.2s;
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          background-color: #f00;
+        }
+        &:hover {
+          &::before {
+            transform: scale(1);
+          }
+        }
+      }
+      .nav {
+        li {
+          display: inline-block;
+          padding-inline-start: 15px;
+          a {
+            color: #333;
+            font-size: 18px;
+            &:hover {
+              color: #888;
+            }
+          }
+        }
+      }
+    }
+    .main {
+      // Slide Work Start
+      section {
+        margin-bottom: 30px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        &.slider {
+          min-height: 300px;
+          img {
+            filter: unquote("grayscale()");
+          }
+          .owl-carousel {
+            .owl-nav {
+              & .owl-prev,
+              .owl-next {
+                position: absolute;
+                font-size: 60px;
+                top: 50%;
+                padding: 10px !important;
+                background-color: #000;
+                border-radius: 50%;
+                height: 60px;
+                width: 60px;
+                opacity: 0;
+                visibility: hidden;
+                @include flex(center, center);
+                span {
+                  color: #fff;
+                  position: relative;
+                  top: -3px;
+                }
+              }
+              .owl-prev {
+                left: 0;
+                transform: translate(-50%, -50%);
+              }
+              .owl-next {
+                right: 0;
+                transform: translate(50%, -50%);
+              }
+            }
+          }
+          &:hover {
+            .owl-carousel {
+              .owl-nav {
+                .owl-prev {
+                  transform: translate(50%, -50%);
+                  opacity: 1;
+                  visibility: visible;
+                }
+                .owl-next {
+                  transform: translate(-50%, -50%);
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        } // Slide Work Start
+
+        //   Featured Section Start
+        &.featured {
+          .msg {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: green;
+            &.del {
+              color: #f00;
+            }
+          }
+          .grid-boxes {
+            @include grid(auto-fill, 300px, 20px);
+            padding-inline: 20px;
+            margin-bottom: 20px;
+            .item {
+              min-height: 300px;
+              position: relative;
+              background-color: lightblue;
+              @include flex(center, center);
+              &:nth-child(even) {
+                background-color: lightcoral;
+              }
+              .close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 20px;
+                width: 30px;
+                height: 30px;
+                background: #333;
+                text-align: center;
+                color: #fff;
+                line-height: 1.4;
+                opacity: 0;
+                visibility: hidden;
+                cursor: pointer;
+                &:hover {
+                  border-radius: 50%;
+                }
+              }
+              &:hover {
+                .close {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+        //   Featured Section Ends
+
+        //   Add-User Section Start
+        &.add-user {
+          margin-top: 20px;
+          padding-left: 20px;
+          form {
+            padding-block: 30px;
+            @include flex(initial, initial, 10px);
+            flex-flow: column wrap;
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

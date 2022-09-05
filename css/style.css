@@ -1,0 +1,183 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.5s;
+}
+
+.txt-center {
+  text-align: center;
+}
+.txt-center.g-12 {
+  grid-column: 1/-1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  max-width: 1440px;
+  margin-inline: auto;
+  box-shadow: 0 0 8px 2px #888;
+  overflow-x: hidden;
+}
+html body header {
+  min-height: 80px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+html body header h3 {
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+html body header h3::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scale(0);
+  height: 2px;
+  bottom: -5px;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: #f00;
+}
+html body header h3:hover::before {
+  transform: scale(1);
+}
+html body header .nav li {
+  display: inline-block;
+  -webkit-padding-start: 15px;
+  padding-inline-start: 15px;
+}
+html body header .nav li a {
+  color: #333;
+  font-size: 18px;
+}
+html body header .nav li a:hover {
+  color: #888;
+}
+html body .main section {
+  margin-bottom: 30px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+html body .main section.slider {
+  min-height: 300px;
+}
+html body .main section.slider img {
+  filter: grayscale();
+}
+html body .main section.slider .owl-carousel .owl-nav .owl-prev,
+html body .main section.slider .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  font-size: 60px;
+  top: 50%;
+  padding: 10px !important;
+  background-color: #000;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+html body .main section.slider .owl-carousel .owl-nav .owl-prev span,
+html body .main section.slider .owl-carousel .owl-nav .owl-next span {
+  color: #fff;
+  position: relative;
+  top: -3px;
+}
+html body .main section.slider .owl-carousel .owl-nav .owl-prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+html body .main section.slider .owl-carousel .owl-nav .owl-next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+html body .main section.slider:hover .owl-carousel .owl-nav .owl-prev {
+  transform: translate(50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+html body .main section.slider:hover .owl-carousel .owl-nav .owl-next {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+html body .main section.featured .msg {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: green;
+}
+html body .main section.featured .msg.del {
+  color: #f00;
+}
+html body .main section.featured .grid-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding-inline: 20px;
+  margin-bottom: 20px;
+}
+html body .main section.featured .grid-boxes .item {
+  min-height: 300px;
+  position: relative;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+html body .main section.featured .grid-boxes .item:nth-child(even) {
+  background-color: lightcoral;
+}
+html body .main section.featured .grid-boxes .item .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  line-height: 1.4;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+html body .main section.featured .grid-boxes .item .close:hover {
+  border-radius: 50%;
+}
+html body .main section.featured .grid-boxes .item:hover .close {
+  opacity: 1;
+  visibility: visible;
+}
+html body .main section.add-user {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+html body .main section.add-user form {
+  padding-block: 30px;
+  display: flex;
+  align-items: initial;
+  justify-content: initial;
+  gap: 10px;
+  flex-flow: column wrap;
+  max-width: 300px;
+} /*# sourceMappingURL=style.css.map */
