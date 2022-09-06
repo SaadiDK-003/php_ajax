@@ -20,32 +20,6 @@
                     }
                 }
             });
-            // $('.slider').mouseenter(function(){
-            //     $('.owl-carousel .owl-nav .owl-prev,.owl-carousel .owl-nav .owl-next').removeClass('slideOut');
-            //     $('.owl-carousel .owl-nav .owl-prev,.owl-carousel .owl-nav .owl-next').addClass('slideIn');
-            // });
-            // $('.slider').mouseleave(function(){
-            //     $('.owl-carousel .owl-nav .owl-prev,.owl-carousel .owl-nav .owl-next').removeClass('slideIn');
-            //     $('.owl-carousel .owl-nav .owl-prev,.owl-carousel .owl-nav .owl-next').addClass('slideOut');
-            // });
-
-            // Content-editable work start
-            // $('.grid-boxes').on('mouseleave', '.item', function(e){
-            //     e.preventDefault();
-            //     let ID = $(this).children('a').data('id');
-            //     let text = $(this).find('h3').text();
-            //     // alert(text);
-            //     $.ajax({
-            //         url: 'update.php',
-            //         type: 'post',
-            //         data: {id:ID,text:text},
-            //         success:function(result){
-            //             alert(result);
-            //         }
-            //     });
-            // });
-            // Content-editable work Ends
-
 
             // Content-editable work start
             $('.grid-boxes').on('focusout', '.item a h3', function(e){
@@ -87,7 +61,6 @@
                             $('.msg').removeClass('del');
                         }, 1500);
                         setTimeout(() => {
-                            // $('.grid-boxes').load();
                                 location.reload(); 
                                 // $(".grid-boxes").load(location.href + " .grid-boxes");
                             }, 1650);

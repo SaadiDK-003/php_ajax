@@ -41,7 +41,7 @@
                 <div class="item" <?=(empty($row->bg_img) ? '':'style="background-image: url(img/box-img/'.$row->bg_img .')"');?>>
                 <span class="close">x</span>
                     <a href="javascript:;">
-                        <h3 contenteditable='true' <?=(empty($row->color)) ? '':'style="color:'.$row->color.'"';?> data-id="<?=$row->id?>"><?=$row->Title?></h3>
+                        <h3 contenteditable='true' <?=(empty($row->color)) ? '':'style="color: #'.$row->color.'"';?> data-id="<?=$row->id?>"><?=$row->Title?></h3>
                     </a>
                 </div>
                 <?php endwhile; } else {echo '<h3 class="txt-center g-12">No Data.</h3>';}?>
