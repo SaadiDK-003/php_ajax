@@ -56,8 +56,7 @@ html body header h3:hover::before {
 }
 html body header .nav li {
   display: inline-block;
-  -webkit-padding-start: 15px;
-          padding-inline-start: 15px;
+  padding-inline-start: 15px;
 }
 html body header .nav li a {
   color: #333;
@@ -118,6 +117,9 @@ html body .main section.slider:hover .owl-carousel .owl-nav .owl-next {
   transform: translate(-50%, -50%);
   opacity: 1;
   visibility: visible;
+}
+html body .main section.slider:hover img {
+  filter: unset;
 }
 html body .main section.featured .msg {
   font-size: 18px;
