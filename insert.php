@@ -1,9 +1,11 @@
 <?php
 require_once 'db/database.php';
 
-if(isset($_POST['user'])){
-    $user = $_POST['user'];
-    $insert = $db->query("INSERT INTO `user` (username) VALUES('$user')");
+if(isset($_POST['title'])){
+    $user = $_POST['title'];
+    $img = $_POST['img'];
+    $color = $_POST['color'];
+    $insert = $db->query("INSERT INTO `content` (Title,image,color) VALUES('$user','$img','$color')");
 
     if($insert){
         echo 'User has been added Successfully.';
@@ -29,11 +31,13 @@ else{
         <section class="add-user">
             <h3 class="msg"></h3>
             <form action="" id="myForm">
-                <label for="username">Username</label>
-                <input type="text" name="user" id="username" required>
-                <!-- <label for="Email">Email</label><br>
-                <input type="text" name="email" id="Email"><br>
-                 -->
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required>
+                <label for="img">Img Name with extension</label>
+                <input type="text" name="img" id="img">
+                <label for="color">Color Code</label>
+                <input type="text" name="color" id="color">
+                
                  <input type="submit" value="submit">
             </form>
         </section>
