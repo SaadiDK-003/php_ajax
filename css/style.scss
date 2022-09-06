@@ -151,11 +151,12 @@ html {
               position: relative;
               background-color: lightblue;
               @include flex(center, center);
-              background-position: center;
+              background-position: left top;
               background-repeat: no-repeat;
               background-size: 0 0;
               &:nth-child(even) {
                 background-color: lightcoral;
+                background-position: right top;
               }
               .close {
                 position: absolute;
@@ -181,6 +182,7 @@ html {
                   visibility: visible;
                 }
                 background-size: 100% 100%;
+                background-position: center;
               }
             }
           }
