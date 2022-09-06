@@ -142,12 +142,13 @@ html body .main section.featured .grid-boxes .item {
   align-items: center;
   justify-content: center;
   gap: 0;
-  background-position: center;
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: 0 0;
 }
 html body .main section.featured .grid-boxes .item:nth-child(even) {
   background-color: lightcoral;
+  background-position: right top;
 }
 html body .main section.featured .grid-boxes .item .close {
   position: absolute;
@@ -169,6 +170,7 @@ html body .main section.featured .grid-boxes .item .close:hover {
 }
 html body .main section.featured .grid-boxes .item:hover {
   background-size: 100% 100%;
+  background-position: center;
 }
 html body .main section.featured .grid-boxes .item:hover .close {
   opacity: 1;
