@@ -25,16 +25,23 @@
             <h5 class="txt-center msg"></h5>
             <div class="grid-boxes">
                 <?php 
-                $sql = $db->query('SELECT * FROM `user`');
+                $sql = $db->query("SELECT
+                c.id as 'id',
+                c.Title as 'Title',
+                c.image as 'bg_img',
+                c.color as 'color'
+            FROM
+                testing.content c;
+            ");
 
                 if(mysqli_num_rows($sql)> 0){
                 while($row = mysqli_fetch_object($sql)):
                     
                 ?>
-                <div class="item">
+                <div class="item" <?=(empty($row->bg_img) ? '':'style="background-image: url(img/box-img/'.$row->bg_img .')"');?>>
                 <span class="close">x</span>
                     <a href="javascript:;">
-                        <h3 contenteditable='true' data-id="<?=$row->id?>"><?=$row->username?></h3>
+                        <h3 contenteditable='true' <?=(empty($row->color)) ? '':'style="color:'.$row->color.'"';?> data-id="<?=$row->id?>"><?=$row->Title?></h3>
                     </a>
                 </div>
                 <?php endwhile; } else {echo '<h3 class="txt-center g-12">No Data.</h3>';}?>
