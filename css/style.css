@@ -57,7 +57,7 @@ html body header h3:hover::before {
 html body header .nav li {
   display: inline-block;
   -webkit-padding-start: 15px;
-  padding-inline-start: 15px;
+          padding-inline-start: 15px;
 }
 html body header .nav li a {
   color: #333;
@@ -142,6 +142,9 @@ html body .main section.featured .grid-boxes .item {
   align-items: center;
   justify-content: center;
   gap: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0 0;
 }
 html body .main section.featured .grid-boxes .item:nth-child(even) {
   background-color: lightcoral;
@@ -164,6 +167,9 @@ html body .main section.featured .grid-boxes .item .close {
 html body .main section.featured .grid-boxes .item .close:hover {
   border-radius: 50%;
 }
+html body .main section.featured .grid-boxes .item:hover {
+  background-size: 100% 100%;
+}
 html body .main section.featured .grid-boxes .item:hover .close {
   opacity: 1;
   visibility: visible;
@@ -171,6 +177,12 @@ html body .main section.featured .grid-boxes .item:hover .close {
 html body .main section.add-user {
   margin-top: 20px;
   padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  flex-flow: column wrap;
 }
 html body .main section.add-user form {
   padding-block: 30px;
@@ -180,4 +192,5 @@ html body .main section.add-user form {
   gap: 10px;
   flex-flow: column wrap;
   max-width: 300px;
-} /*# sourceMappingURL=style.css.map */
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

@@ -151,6 +151,9 @@ html {
               position: relative;
               background-color: lightblue;
               @include flex(center, center);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 0 0;
               &:nth-child(even) {
                 background-color: lightcoral;
               }
@@ -177,6 +180,7 @@ html {
                   opacity: 1;
                   visibility: visible;
                 }
+                background-size: 100% 100%;
               }
             }
           }
@@ -187,11 +191,15 @@ html {
         &.add-user {
           margin-top: 20px;
           padding-left: 20px;
+          @include flex(center,center,0);
+          text-align: center;
+          flex-flow: column wrap;
           form {
             padding-block: 30px;
             @include flex(initial, initial, 10px);
             flex-flow: column wrap;
             max-width: 300px;
+            width: 100%;
           }
         }
       }
