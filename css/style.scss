@@ -129,6 +129,9 @@ html {
                 }
               }
             }
+            img {
+              filter: unset;
+            }
           }
         } // Slide Work Start
 
@@ -193,7 +196,7 @@ html {
         &.add-user {
           margin-top: 20px;
           padding-left: 20px;
-          @include flex(center,center,0);
+          @include flex(center, center, 0);
           text-align: center;
           flex-flow: column wrap;
           form {
