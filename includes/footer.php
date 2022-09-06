@@ -72,20 +72,25 @@
             // Add User Start
             $('#myForm').on('submit',function(e){
                 e.preventDefault();
-                
-                let data = $(this).serialize();
-                // console.log(data);
+
                 $.ajax({
+                    type: 'POST',
                     url: 'insert.php',
-                    type: 'post',
-                    data: data,
-                    success: function(res){
-                        $('.msg').text(res);
-                        setTimeout(() => {
-                            window.location.href="index.php";
-                        }, 1500);
+                    data: new FormData(this),
+                    dataType: 'json',
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    beforeSend: function(){
+                        $('#myForm').css("opacity",".5");
+                    },
+                    success: function(response){
+                        $('.msg').text(response);
+                        $('#myForm').css("opacity","");
                     }
-                })
+                });
+
+
             });
             // Add User Ends
 
