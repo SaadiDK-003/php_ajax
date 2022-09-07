@@ -7,6 +7,7 @@
             margin: 10,
             nav: true,
             dots: false,
+            autoplay:true,
             responsive: {
                 0: {
                     items: 1
@@ -73,7 +74,22 @@
         });
         // Delete Box Ends
 
-        // Add User Start
+        // Add Box-Content Start
+        $(':file').on('change', function(){
+            let file = this.files[0];
+            if(file.size > 300000){
+                console.log(file.size);
+                $(this).val('');
+                $('.msg').text('File size must be lower than 300kb').css('color','green');
+                setTimeout(() => {
+                    $('.msg').text('');
+                    $('.msg').removeAttr('style');
+                }, 1800);
+            }else{
+                console.log(file, ' ~ ',file.size);
+            }
+        });
+
         $('#myForm').on('submit', function(e) {
             e.preventDefault();
 
@@ -92,14 +108,14 @@
                     $('.msg').text(response);
                     $('#myForm').css("opacity", "");
                     setTimeout(() => {
-                        window.location.href = 'index.php';
+                        // window.location.href = 'index.php';
                     }, 1500);
                 }
             });
 
 
         });
-        // Add User Ends
+        // Add Box-Content Ends
 
     });
 </script>
