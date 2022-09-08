@@ -84,7 +84,7 @@
                 setTimeout(() => {
                     $('.msg').text('');
                     $('.msg').removeAttr('style');
-                }, 1800);
+                }, 2800);
             }else{
                 console.log(file, ' ~ ',file.size);
             }
@@ -108,7 +108,7 @@
                     $('.msg').text(response);
                     $('#myForm').css("opacity", "");
                     setTimeout(() => {
-                        // window.location.href = 'index.php';
+                        window.location.href = 'index.php';
                     }, 1500);
                 }
             });
