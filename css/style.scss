@@ -205,6 +205,9 @@ html {
             flex-flow: column wrap;
             max-width: 300px;
             width: 100%;
+            input[name="color"] {
+              width: 100%;
+            }
           }
         }
       }
